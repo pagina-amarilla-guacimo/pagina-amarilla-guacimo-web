@@ -14,16 +14,21 @@ model Store{
   name String 
   description String
   phoneNumber String
+  district String @default("Guácimo")
   location String
   image String?
   categoryId Int
   category Category @relation(fields: [categoryId], references: [id])
+  isActive Boolean @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 } 
 
 model Category{
   id Int @id @default(autoincrement())
   name String
   stores Store[]
+  isActive Boolean @default(true)
 }
 
 model Admin{

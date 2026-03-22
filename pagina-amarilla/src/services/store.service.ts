@@ -5,6 +5,10 @@ export const storeService = {
         return storeRepository.findAll()
     },
 
+    getAllIncludingDeleted: () => {
+        return storeRepository.findAllIncludingDeleted()
+    },
+
     getById: (id: number) => {
         return storeRepository.findById(id)
     },
@@ -13,6 +17,7 @@ export const storeService = {
         name: string
         description: string
         phoneNumber: string
+        district: string
         location: string
         image?: string
         categoryId: number
@@ -24,6 +29,7 @@ export const storeService = {
         name?: string
         description?: string
         phoneNumber?: string
+        district?: string
         location?: string
         image?: string
         categoryId?: number

@@ -3,16 +3,19 @@ export interface Store {
   name: string
   description: string
   phoneNumber: string
+  district: string
   location: string
   image?: string | null
   categoryId: number
   category?: Category
+  isActive: boolean
 }
 
 export interface Category {
   id: number
   name: string
   stores?: Store[]
+  isActive: boolean
 }
 
 export interface Admin {
