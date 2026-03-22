@@ -77,7 +77,7 @@ export default function AdminProfilePage() {
 
         router.push("/admin");
       } else {
-        setMessage({ type: "error", text: result.error });
+        setMessage({ type: "error", text: result.error ?? "Error desconocido"});
         setIsSaving(false);
       }
     } catch (error) {
